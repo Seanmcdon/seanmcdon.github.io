@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", function() {
   var button = document.getElementById("start-button");
   button.addEventListener("click", function(e){
   
+    note_el.innerHTML = "?";
+    
     var note_el = document.getElementById("the_note");
     var rand = getRandom();
 
