@@ -7,7 +7,7 @@ function getRandom() {
 
 const note_el = document.getElementById("the_note");
 
-note_el.innerHTML = piano_notes[getRandom()].note;
+note_el.innerHTML = piano_notes[getRandom()].key;
 
 
 
