@@ -14,10 +14,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
   note_el.innerHTML = res.toUpperCase();
   
+  var audio = new Audio('GreatAndSoftPiano/'+str+'.mp3');
+  audio.play();  
+  
 });
 
-var audio = new Audio('GreatAndSoftPiano/'+str+'.mp3');
-audio.play();
+
 
 
 
