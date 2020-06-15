@@ -16,9 +16,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
   note_el.innerHTML = res.toUpperCase();
   
-  var audio = new Audio('GreatAndSoftPiano/'+piano_notes[rand].file+'.mp3');
-  audio.play();  
+  var button = document.getElementById("start-button");
   
+  button.addEventListener("click", function(e){
+  
+    var audio = new Audio('GreatAndSoftPiano/'+piano_notes[rand].file+'.mp3');
+    audio.play();  
+  
+  });  
+    
 });
 
 
