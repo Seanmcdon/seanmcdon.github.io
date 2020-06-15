@@ -5,9 +5,15 @@ function getRandom() {
   return Math.floor(Math.random() * 88);
 }
 
-const note_el = document.getElementById("the_note");
+document.addEventListener("DOMContentLoaded", function() {
+  
+  var note_el = document.getElementById("the_note");
 
-note_el.innerHTML = piano_notes[getRandom()].key;
+  note_el.innerHTML = piano_notes[getRandom()].key;
+  
+});
+
+
 
 
 
