@@ -33,7 +33,7 @@ function speak(text){
 
 document.addEventListener("DOMContentLoaded", function() {
 	
-document.getElementById("ver").innerHTML = "version 1:15";
+document.getElementById("ver").innerHTML = "version 1:51";
 
                           
   var button = document.getElementById("start-button");
@@ -46,22 +46,17 @@ document.getElementById("ver").innerHTML = "version 1:15";
 
     str = piano_notes[rand].key;
     var res = str.replace("s", " sharp");
-    
-    document.getElementById("dummy").addEventListener("click", function(){  speak(res.toUpperCase()); }, { once: true });                          
-    triggerEvent(document.getElementById("dummy"), "click");  	  
-	  
+     	  
     var audio = new Audio('GreatAndSoftPiano/'+piano_notes[rand].file+'.mp3');
     audio.play().then(function(){  
 
-          document.getElementById("dummy").addEventListener("click", function(){  speak(res.toUpperCase()); }, { once: true });                          
-          triggerEvent(document.getElementById("dummy"), "click"); 	    
-	    
+        document.getElementById("dummy").addEventListener("click", function(){  speak(res.toUpperCase()); }, { once: true });                          
+       	      
         setTimeout(function(){ 
  
                   
                    
-          //speak(res.toUpperCase());
-                  
+          triggerEvent(document.getElementById("dummy"), "click");                   
           note_el.innerHTML = res.toUpperCase();
 
         }, 2000);
