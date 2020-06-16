@@ -46,11 +46,13 @@ document.addEventListener("DOMContentLoaded", function() {
     
     var audio = new Audio('GreatAndSoftPiano/'+piano_notes[rand].file+'.mp3');
     audio.play().then(function(){  
-    
+
+          document.getElementById("dummy").addEventListener("click", function(){  speak(res.toUpperCase()); }, { once: true });                          
+          triggerEvent(document.getElementById("dummy"), "click"); 	    
+	    
         setTimeout(function(){ 
  
-          document.getElementById("dummy").addEventListener("click", function(){  speak(res.toUpperCase()); }, { once: true });                          
-          triggerEvent(document.getElementById("dummy"), "click");                   
+                  
                    
           //speak(res.toUpperCase());
                   
