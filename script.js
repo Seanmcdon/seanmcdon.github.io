@@ -1,4 +1,5 @@
 
+
 function triggerEvent(el, type){
 	   if ('createEvent' in document) {
 	        // modern browsers, IE9+
@@ -31,6 +32,11 @@ function speak(text){
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+	
+document.getElementById("ver").innerHTML = "version 1:13";
+	
+	
+	
            document.getElementById("dummy").addEventListener("click", function(){  speak(res.toUpperCase()); }, { once: true });                          
           triggerEvent(document.getElementById("dummy"), "click");  
                           
