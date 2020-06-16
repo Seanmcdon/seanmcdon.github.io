@@ -46,18 +46,15 @@ document.getElementById("ver").innerHTML = "version 1:59";
 
     str = piano_notes[rand].key;
     var res = str.replace("s", " sharp");
-     	  
+   
+    document.getElementById("dummy").addEventListener("click", function(){  speak(res.toUpperCase()); }, { once: true });                          
+    triggerEvent(document.getElementById("dummy"), "click");  	  
+	  
     var audio = new Audio('GreatAndSoftPiano/'+piano_notes[rand].file+'.mp3');
     audio.play().then(function(){  
-
-        document.getElementById("dummy").addEventListener("click", function(){  speak(res.toUpperCase()); }, { once: true });                          
-       	triggerEvent(document.getElementById("dummy"), "click");   
-	    
+ 	    
         setTimeout(function(){ 
- 
-                  
                    
-          //triggerEvent(document.getElementById("dummy"), "click");                   
           note_el.innerHTML = res.toUpperCase();
 
         }, 2000);
