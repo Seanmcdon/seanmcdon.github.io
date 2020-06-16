@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function() {
     
         setTimeout(function(){ 
 
-          document.getElementById("readystatethree").innerHTML = audio.readyState;    
           note_el.innerHTML = res.toUpperCase();
 
         }, 2000);
