@@ -33,7 +33,7 @@ function speak(text){
 
 document.addEventListener("DOMContentLoaded", function() {
 	
-  document.getElementById("ver").innerHTML = "version 2:23";
+  document.getElementById("ver").innerHTML = "version 2:29";
                           
   var button = document.getElementById("start-button");
   button.addEventListener("click", function(e){
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var n = str.search("s");
     if(n != -1) var res = str.replace("s", " sharp");
     else var res = str + " natural";
-    speak(res.toUpperCase());
+    //speak(res.toUpperCase());
 	  
     //document.getElementById("dummy").addEventListener("click", function(){  speak(res.toUpperCase()); }, { once: true });                          
 	  
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	  //triggerEvent(document.getElementById("dummy"), "click"); 	
           note_el.innerHTML = res.toUpperCase();
 
-        }, 2000);
+        }, 5000);
       
     });
       
