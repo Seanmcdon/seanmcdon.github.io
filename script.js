@@ -51,12 +51,13 @@ document.getElementById("ver").innerHTML = "version 1:51";
     audio.play().then(function(){  
 
         document.getElementById("dummy").addEventListener("click", function(){  speak(res.toUpperCase()); }, { once: true });                          
-       	      
+       	triggerEvent(document.getElementById("dummy"), "click");   
+	    
         setTimeout(function(){ 
  
                   
                    
-          triggerEvent(document.getElementById("dummy"), "click");                   
+          //triggerEvent(document.getElementById("dummy"), "click");                   
           note_el.innerHTML = res.toUpperCase();
 
         }, 2000);
