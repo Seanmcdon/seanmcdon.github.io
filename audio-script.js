@@ -1,13 +1,13 @@
 var synth = window.speechSynthesis;
 
-var inputForm = document.querySelector('form');
+//var inputForm = document.querySelector('form');
 var inputTxt = document.querySelector('.txt');
-var voiceSelect = document.querySelector('select');
+//var voiceSelect = document.querySelector('select');
 
-var pitch = document.querySelector('#pitch');
-var pitchValue = document.querySelector('.pitch-value');
-var rate = document.querySelector('#rate');
-var rateValue = document.querySelector('.rate-value');
+//var pitch = document.querySelector('#pitch');
+//var pitchValue = document.querySelector('.pitch-value');
+//var rate = document.querySelector('#rate');
+//var rateValue = document.querySelector('.rate-value');
 
 var voices = [];
 
@@ -32,7 +32,7 @@ function populateVoiceList() {
     option.setAttribute('data-name', voices[i].name);
     voiceSelect.appendChild(option);
   }
-  voiceSelect.selectedIndex = selectedIndex;
+  voiceSelect.selectedIndex = 74;
 }
 
 populateVoiceList();
@@ -47,12 +47,15 @@ function speak(){
     }
     if (inputTxt.value !== '') {
     var utterThis = new SpeechSynthesisUtterance(inputTxt.value);
+    
     utterThis.onend = function (event) {
         console.log('SpeechSynthesisUtterance.onend');
     }
     utterThis.onerror = function (event) {
         console.error('SpeechSynthesisUtterance.onerror');
     }
+    
+    /*  
     var selectedOption = voiceSelect.selectedOptions[0].getAttribute('data-name');
     for(i = 0; i < voices.length ; i++) {
       if(voices[i].name === selectedOption) {
@@ -60,12 +63,16 @@ function speak(){
         break;
       }
     }
-    utterThis.pitch = pitch.value;
-    utterThis.rate = rate.value;
+    */
+      
+    utterThis.voice = voices[74];  
+    utterThis.pitch = 1;
+    utterThis.rate = 1;
     synth.speak(utterThis);
   }
 }
 
+/*
 inputForm.onsubmit = function(event) {
   event.preventDefault();
 
@@ -85,3 +92,4 @@ rate.onchange = function() {
 voiceSelect.onchange = function(){
   speak();
 }
+*/
