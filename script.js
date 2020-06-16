@@ -33,7 +33,7 @@ function speak(text){
 
 document.addEventListener("DOMContentLoaded", function() {
 	
-document.getElementById("ver").innerHTML = "version 1:51";
+document.getElementById("ver").innerHTML = "version 1:59";
 
                           
   var button = document.getElementById("start-button");
