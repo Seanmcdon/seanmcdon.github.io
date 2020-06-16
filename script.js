@@ -7,22 +7,11 @@ function getRandom() {
 
 var synth = window.speechSynthesis;
 
-var voices = [];
-function populateVoiceList() {
-    voices = synth.getVoices().sort(function (a, b) {
-                                    const aname = a.name.toUpperCase(), bname = b.name.toUpperCase();
-                                    if ( aname < bname ) return -1;
-                                    else if ( aname == bname ) return 0;
-                                    else return +1;
-                                    });
-}
-populateVoiceList();
-
 function speak(text){
 
         var utterThis = new SpeechSynthesisUtterance(text);
         
-        utterThis.voice = voices[74];  
+        utterThis.voice = synth.getVoices()[55];    
         utterThis.pitch = 1;
         utterThis.rate = 1;
         synth.speak(utterThis);
