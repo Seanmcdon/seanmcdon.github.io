@@ -13,9 +13,6 @@ function triggerEvent(el, type){
 	    }
 }
 
-triggerEvent(document.getElementById("dummy"), "click");
-document.getElementById("dummy").addEventListener("click", function(){  alert("hello"); });
-
 function getRandom() {
   return Math.floor(Math.random() * 88);
 }
@@ -35,8 +32,15 @@ function speak(text){
 
 document.addEventListener("DOMContentLoaded", function() {
   
+                          
   var button = document.getElementById("start-button");
   button.addEventListener("click", function(e){
+                          
+                          
+    document.getElementById("dummy").addEventListener("click", function(){  speak("hey"); }, { once: true });                          
+    triggerEvent(document.getElementById("dummy"), "click");
+                          
+                                    
    
     var note_el = document.getElementById("the_note");
     note_el.innerHTML = "?";
