@@ -47,7 +47,7 @@ document.getElementById("ver").innerHTML = "version 2:14";
     str = piano_notes[rand].key;
   
     var n = str.search("s");
-    if(n == -1) var res = str.replace("s", " sharp");
+    if(n != -1) var res = str.replace("s", " sharp");
     else var res = str + " natural";
 	  
     document.getElementById("dummy").addEventListener("click", function(){  speak(res.toUpperCase()); }, { once: true });                          
