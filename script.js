@@ -19,14 +19,19 @@ document.addEventListener("DOMContentLoaded", function() {
     var res = str.replace("s", "#");
     
     var audio = new Audio('GreatAndSoftPiano/'+piano_notes[rand].file+'.mp3');
+    document.getElementById("readystateone").innerHTML = audio.readyState;
     audio.play();  
+    document.getElementById("readystatetwo").innerHTML = audio.readyState;
     
     setTimeout(function(){ 
       
+      document.getElementById("readystatethree").innerHTML = audio.readyState;    
       note_el.innerHTML = res.toUpperCase();
       
     }, 2000);
   
+    document.getElementById("readystatefour").innerHTML = audio.readyState;   
+    
   });  
     
 });
