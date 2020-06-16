@@ -36,26 +36,23 @@ document.addEventListener("DOMContentLoaded", function() {
   var button = document.getElementById("start-button");
   button.addEventListener("click", function(e){
                           
-                          
-    document.getElementById("dummy").addEventListener("click", function(){  speak("hey"); }, { once: true });                          
-    triggerEvent(document.getElementById("dummy"), "click");
-                          
-                                    
-   
     var note_el = document.getElementById("the_note");
     note_el.innerHTML = "?";
     
     var rand = getRandom();
 
     str = piano_notes[rand].key;
-    var res = str.replace("s", "#");
+    var res = str.replace("s", " sharp");
     
     var audio = new Audio('GreatAndSoftPiano/'+piano_notes[rand].file+'.mp3');
     audio.play().then(function(){  
     
         setTimeout(function(){ 
  
-          speak(res.toUpperCase());
+          document.getElementById("dummy").addEventListener("click", function(){  speak(res.toUpperCase()); }, { once: true });                          
+          triggerEvent(document.getElementById("dummy"), "click");                   
+                   
+          //speak(res.toUpperCase());
                   
           note_el.innerHTML = res.toUpperCase();
 
