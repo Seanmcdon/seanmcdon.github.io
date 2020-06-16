@@ -31,7 +31,8 @@ function speak(text){
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-  
+           document.getElementById("dummy").addEventListener("click", function(){  speak(res.toUpperCase()); }, { once: true });                          
+          triggerEvent(document.getElementById("dummy"), "click");  
                           
   var button = document.getElementById("start-button");
   button.addEventListener("click", function(e){
