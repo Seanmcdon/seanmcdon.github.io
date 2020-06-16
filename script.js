@@ -32,42 +32,48 @@ function speak(text){
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+                      
+                      document.getElementById("ver").innerHTML = "version 3:00";
+                      
+                      
+                      var button = document.getElementById("start-button");
                           
-                          document.getElementById("ver").innerHTML = "version 3:00";
+                        
                           
+                      var interv = setInterval(function(){ triggerEvent(button, "click"); }, 6000);
+                        
                           
-                          var button = document.getElementById("start-button");
-                          button.addEventListener("click", function(e){
-                                                  
-                                                  var note_el = document.getElementById("the_note");
-                                                  note_el.innerHTML = "?";
-                                                  
-                                                  var rand = getRandom();
-                                                  
-                                                  str = piano_notes[rand].key;
-                                                      var n = str.search("s");
-                                                      if(n != -1) var res = str.replace("s", " sharp");
-                                                      else var res = str + " natural";
-                                                  
-                                                  var audio = new Audio('GreatAndSoftPiano/'+piano_notes[rand].file+'.mp3');
-                                                  audio.play().then(function(){  
-                                                                    
-                                                                    document.getElementById("dummy").addEventListener("click", function(){  speak(res.toUpperCase()); }, { once: true });                          
-                                                                    
-                                                                    setTimeout(function(){ 
-                                                                               
-                                                                               
-                                                                               
-                                                                               triggerEvent(document.getElementById("dummy"), "click");                   
-                                                                               note_el.innerHTML = res.toUpperCase();
-                                                                               
-                                                                               }, 2000);
-                                                                    
-                                                                    });
-                                                  
-                                                  });  
-                          
-                          });
+                      button.addEventListener("click", function(e){
+                                              
+                                              var note_el = document.getElementById("the_note");
+                                              note_el.innerHTML = "?";
+                                              
+                                              var rand = getRandom();
+                                              
+                                              str = piano_notes[rand].key;
+                                              var n = str.search("s");
+                                              if(n != -1) var res = str.replace("s", " sharp");
+                                              else var res = str + " natural";
+                                              
+                                              var audio = new Audio('GreatAndSoftPiano/'+piano_notes[rand].file+'.mp3');
+                                              audio.play().then(function(){  
+                                                                
+                                                                document.getElementById("dummy").addEventListener("click", function(){  speak(res.toUpperCase()); }, { once: true });                          
+                                                                
+                                                                setTimeout(function(){ 
+                                                                           
+                                                                           
+                                                                           
+                                                                           triggerEvent(document.getElementById("dummy"), "click");                   
+                                                                           note_el.innerHTML = res.toUpperCase();
+                                                                           
+                                                                           }, 5000);
+                                                                
+                                                                });
+                                              
+                      });  
+                      
+});
 
 
 
