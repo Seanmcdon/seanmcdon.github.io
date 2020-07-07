@@ -8,7 +8,7 @@ window.onload = function () {
 	//Choose chord
 	td.note_name = $(el).attr('name');
 	td.answer = $(el).attr('name');
-	td.note_octave = randomInt(3)+2;  //(3) + 3 
+	td.note_octave = randomInt(1)+2;  //(3) + 3 
     }
 
     td.hearQuiz = function() {
